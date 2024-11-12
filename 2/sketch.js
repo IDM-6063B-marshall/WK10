@@ -1,10 +1,15 @@
 // TODO: add other files
 // TODO: add sound to exercise 1
 
-let bloop;
+// need to add a script library to index to be able to use sound (see line 5 in this sketch's index)
+
+let bloops = [];
 
 function preload() {
-  bloop = loadSound("../assets/bloop-0.mp3");
+  bloops.push(loadSound("../assets/bloop-0.mp3"));
+  bloops.push(loadSound("../assets/bloop-1.mp3"));
+  bloops.push(loadSound("../assets/bloop-2.mp3"));
+  bloops.push(loadSound("../assets/bloop-3.mp3"));
 }
 
 function setup() {
@@ -16,5 +21,6 @@ function draw() {
 }
 
 function mouseClicked() {
-  bloop.play();
+  mBloop = random(bloops);
+  mBloop.play();
 }
